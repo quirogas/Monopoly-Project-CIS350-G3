@@ -128,7 +128,7 @@ public class GameTextController {
     OwnableSquare property;
 
     //The variable with the property id
-    int propertyId = 0;
+    int propertyId;
 
     //This variable will make sure the player has a chance to mortgage as many properties as desired
     Boolean run = true;
@@ -145,7 +145,6 @@ public class GameTextController {
 
       //Checks if the user wants to exite the mortgage loop
       if (command.equalsIgnoreCase("done")) {
-        run = false;
         break;
       }
 
@@ -412,12 +411,12 @@ public class GameTextController {
       if (game.getCurrentPlayer().getGroupsOwned().size() > 0 && game.getCurrentPlayer()
           .getGroupsOwned().contains(property.getGROUP_NUMBER())) {
         // Check if the property has a hotel
-        if (property.isHasHotel() == false) {
+        if (!property.isHasHotel()) {
           // Check if property has 4 houses
           if (property.getNumHouses() < 4) {
             // Check that all other properties in group are not less than 1 house different
             // If you want to build the second house on a property, all other props in that group need to have at least 1 house
-            if (checkHouseCount(property) == true) {
+            if (checkHouseCount(property)) {
               // Check that player has enough money
               if (game.getCurrentPlayer().getWallet() >= property.getHouseCost()) {
                 //add one house to the desired property
@@ -472,7 +471,7 @@ public class GameTextController {
       if (game.getCurrentPlayer().getGroupsOwned().size() > 0 && game.getCurrentPlayer()
           .getGroupsOwned().contains(property.getGROUP_NUMBER())) {
         // Check that the property does not have a hotel already
-        if (property.isHasHotel() == false) {
+        if (!property.isHasHotel()) {
           // Check that the property has 4 houses
           if (property.getNumHouses() == 4) {
             // Check that all other properties in group are not less than 1 house different
@@ -480,21 +479,21 @@ public class GameTextController {
             boolean isHouseCountEven = true;
             for (BoardSquare square : game.getBoard().getSquaresList()) {
               // Only keep checking if isHouseCunt is true. If false, no point to keep going
-              if (isHouseCountEven == true) {
+              if (isHouseCountEven) {
                 // Make sure its a propertySquare
                 if (square.getType() == 0) {
                   PropertySquare propertySquare = (PropertySquare) square;
                   // Check if property is in same group
                   if (propertySquare.getGROUP_NUMBER() == property.getGROUP_NUMBER()) {
                     // Make sure num houses is not less desired prop num houses - 1
-                    if (propertySquare.getNumHouses() < 3 && propertySquare.isHasHotel() == false) {
+                    if (propertySquare.getNumHouses() < 3 && !propertySquare.isHasHotel()) {
                       isHouseCountEven = false;
                     }
                   }
                 }
               }
             }
-            if (isHouseCountEven == true) {
+            if (isHouseCountEven) {
               // Check that player has enough money
               if (game.getCurrentPlayer().getWallet() >= property.getHotelCost()) {
                 // Add one hotel to the desired property (set hasHotel to true)
@@ -537,7 +536,7 @@ public class GameTextController {
     boolean isHouseCountEven = true;
     for (BoardSquare square : game.getBoard().getSquaresList()) {
       // Only keep checking if isHouseCunt is true. If false, no point to keep going
-      if (isHouseCountEven == true) {
+      if (isHouseCountEven) {
         // Make sure its a propertySquare
         if (square.getType() == 0) {
           PropertySquare propertySquare = (PropertySquare) square;

@@ -16,20 +16,20 @@ public abstract class OwnableSquare extends BoardSquare {
   /**
    * An int to hold the PRICE of the property
    */
-  protected final int PRICE;
+  private final int PRICE;
 
   /**
    * An int to hold the property's mortgage value
    */
-  protected final int MORTGAGE_VAL;
+  private final int MORTGAGE_VAL;
   /**
    * An int to keep track of which group this ownableSquare is in
    */
-  protected final int GROUP_NUMBER;
+  private final int GROUP_NUMBER;
   /**
    * A boolean flag to track if the property is mortgaged
    */
-  protected boolean isMortgaged;
+  boolean isMortgaged;
   /**
    * A Player variable to track what player owns this property
    */

@@ -100,7 +100,7 @@ public class Player {
    *
    * @return token Returns the String token.
    *****************************************************************/
-  public String getToken() {
+  String getToken() {
     return TOKEN;
   }
 
@@ -110,7 +110,7 @@ public class Player {
    *
    * @return isBankrupt Returns the boolean isBankrupt.
    *****************************************************************/
-  public boolean isBankrupt() {
+  boolean isBankrupt() {
     return isBankrupt;
   }
 
@@ -119,7 +119,7 @@ public class Player {
    *
    * @param isBankrupt Sets the boolean isBankrupt.
    *****************************************************************/
-  public void setBankrupt(boolean isBankrupt) {
+  void setBankrupt(boolean isBankrupt) {
     this.isBankrupt = isBankrupt;
   }
 
@@ -155,7 +155,7 @@ public class Player {
    *
    * @param propertiesOwned Sets the ArrayList propertiesOwned.
    *****************************************************************/
-  public void setPropertiesOwned(ArrayList<OwnableSquare>
+  void setPropertiesOwned(ArrayList<OwnableSquare>
       propertiesOwned) {
     this.propertiesOwned = propertiesOwned;
   }
@@ -165,7 +165,7 @@ public class Player {
    *
    * @return cardsHeld Returns the ArrayList cardsHeld.
    *****************************************************************/
-  public ArrayList<Card> getCardsHeld() {
+  ArrayList<Card> getCardsHeld() {
     return cardsHeld;
   }
 
@@ -174,7 +174,7 @@ public class Player {
    *
    * @param cardsHeld Sets the ArrayList cardsHeld.
    *****************************************************************/
-  public void setCardsHeld(ArrayList<Card> cardsHeld) {
+  void setCardsHeld(ArrayList<Card> cardsHeld) {
     this.cardsHeld = cardsHeld;
   }
 
@@ -204,7 +204,7 @@ public class Player {
    * -1 = not in jail
    * 0 - 3 = Number of turns in Jail
    *****************************************************************/
-  public int getInJail() {
+  int getInJail() {
     return inJail;
   }
 
@@ -216,7 +216,7 @@ public class Player {
    *               -1 = not in jail
    *                0 - 3 = Number of turns in Jail
    ******************************************************************/
-  public void setInJail(int inJail) {
+  void setInJail(int inJail) {
     this.inJail = inJail;
   }
 
@@ -234,7 +234,7 @@ public class Player {
    * This method sets the list of groups the player owns.
    * @param groupsOwned An array list of groups the player owns.
    ******************************************************************/
-  public void setGroupsOwned(ArrayList<Integer> groupsOwned) {
+  void setGroupsOwned(ArrayList<Integer> groupsOwned) {
     this.groupsOwned = groupsOwned;
   }
 
@@ -249,7 +249,7 @@ public class Player {
    * @param amount The amount of money requested from player.
    * @return amountPaid The amount of money that was paid by player.
    *****************************************************************/
-  public int pay(int amount) {
+  int pay(int amount) {
     int amountPaid;
 
     if (wallet >= amount) {
@@ -283,7 +283,7 @@ public class Player {
    * @param property The property to be added to owned properties
    * list.
    *****************************************************************/
-  public void recieveProperty(OwnableSquare property) {
+  void recieveProperty(OwnableSquare property) {
     propertiesOwned.add(property);
   }
 
@@ -293,7 +293,7 @@ public class Player {
    *
    * @param property The property that the house will be built on.
    *****************************************************************/
-  public void buildHouse(PropertySquare property) {
+  void buildHouse(PropertySquare property) {
     property.setNumHouses(property.getNumHouses() + 1);
     wallet -= property.getHouseCost();
   }
@@ -304,7 +304,7 @@ public class Player {
    *
    * @param property The property that the hotel will be built on.
    *****************************************************************/
-  public void buildHotel(PropertySquare property) {
+  void buildHotel(PropertySquare property) {
     property.setHasHotel(true);
     wallet -= property.getHotelCost();
   }
@@ -315,7 +315,7 @@ public class Player {
    *
    * @param property The property that the house will be sold from.
    *****************************************************************/
-  public void sellHouse(PropertySquare property) {
+  void sellHouse(PropertySquare property) {
     property.setNumHouses(property.getNumHouses() - 1);
     wallet += property.getHouseCost() / 2;
   }
@@ -326,7 +326,7 @@ public class Player {
    *
    * @param property The property that the hotel will be sold from.
    *****************************************************************/
-  public void sellHotel(PropertySquare property) {
+  void sellHotel(PropertySquare property) {
     property.setHasHotel(false);
     wallet += property.getHotelCost() / 2;
   }
@@ -337,7 +337,7 @@ public class Player {
    * @param groupNumber The group number being added
    * @return true if the groupsOwned list is updated; false otherwise.
    *****************************************************************/
-  public boolean addGroupOwned(int groupNumber) {
+  boolean addGroupOwned(int groupNumber) {
     return groupsOwned.add(groupNumber);
   }
 
@@ -358,7 +358,7 @@ public class Player {
    *
    * @param card the card given to the player
    *****************************************************************/
-  public void recieveCard(Card card) {
+  void recieveCard(Card card) {
     cardsHeld.add(card);
   }
 
@@ -374,11 +374,11 @@ public class Player {
    * returns all Ownable squares from the player.
    * @return the list of Ownable squares.
    *****************************************************************/
-  public ArrayList<OwnableSquare> getOwnableProperties() {
+  ArrayList<OwnableSquare> getOwnableProperties() {
     return propertiesOwned;
   }
 
-  public int getNumPropertiesOwnedByType(int typeId) {
+  int getNumPropertiesOwnedByType(int typeId) {
     int count = 0;
 
     for (OwnableSquare onableSquare : propertiesOwned) {

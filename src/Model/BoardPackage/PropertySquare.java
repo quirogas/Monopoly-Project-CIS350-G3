@@ -107,7 +107,7 @@ public class PropertySquare extends OwnableSquare {
    *
    * @return BASE_RENT the base rent of the property.
    *****************************************************************/
-  public int getBaseRent() {
+  int getBaseRent() {
     return BASE_RENT;
   }
 
@@ -118,7 +118,7 @@ public class PropertySquare extends OwnableSquare {
    * @return ONE_HOUSE_RENT the cost of rent w/ one house on the
    * property.
    *****************************************************************/
-  public int getOneHouseRent() {
+  int getOneHouseRent() {
     return ONE_HOUSE_RENT;
   }
 
@@ -129,7 +129,7 @@ public class PropertySquare extends OwnableSquare {
    * @return TWO_HOUSE_RENT the cost of rent w/ two houses on the
    * property.
    *****************************************************************/
-  public int getTwoHouseRent() {
+  int getTwoHouseRent() {
     return TWO_HOUSE_RENT;
   }
 
@@ -140,7 +140,7 @@ public class PropertySquare extends OwnableSquare {
    * @return THREE_HOUSE_RENT the cost of rent w/ three houses on the
    * property.
    *****************************************************************/
-  public int getThreeHouseRent() {
+  int getThreeHouseRent() {
     return THREE_HOUSE_RENT;
   }
 
@@ -151,7 +151,7 @@ public class PropertySquare extends OwnableSquare {
    * @return FOUR_HOUSE_RENT the cost of rent w/ three houses on the
    * property.
    *****************************************************************/
-  public int getFOUR_HOUSE_RENT() {
+  int getFOUR_HOUSE_RENT() {
     return FOUR_HOUSE_RENT;
   }
 
@@ -162,7 +162,7 @@ public class PropertySquare extends OwnableSquare {
    * @return HOTEL_RENT the cost of rent w/ three houses on the
    * property.
    *****************************************************************/
-  public int getHotelRent() {
+  int getHotelRent() {
     return HOTEL_RENT;
   }
 

@@ -42,7 +42,7 @@ public class Die {
   /*****************************************************************
    Generate a random number between 1 - 6 and assign it to the die
    *****************************************************************/
-  public void roll() {
+  void roll() {
     // Generate a random number
     Random random = new Random();
 

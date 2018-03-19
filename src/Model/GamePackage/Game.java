@@ -413,7 +413,7 @@ public class Game {
       cardMoveBack(actions[4]);
     }
     if (actions[5] != -1) {
-      actionSuccess = !(actionSuccess && !cardTax(currentPlayer)) && actionSuccess;
+      actionSuccess = cardTax(currentPlayer);
     }
     if (actions[6] != -1) {
       actionSuccess = !(actionSuccess && !cardPayBank(actions[6])) && actionSuccess;
@@ -436,7 +436,7 @@ public class Game {
    * @param fee the amount to be paid
    * @return boolean whether the action was fully proceed
    *********************************************************************/
-  public boolean collectFee(Player unfortunateSoul, Player fortunateSoul, int fee) {
+  private boolean collectFee(Player unfortunateSoul, Player fortunateSoul, int fee) {
     //Check if player can pay fee
     if (unfortunateSoul.getWallet() - fee >= 0 && fortunateSoul != null) {
       //collect the given fee from player / bank

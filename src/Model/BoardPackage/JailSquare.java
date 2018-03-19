@@ -27,7 +27,7 @@ public class JailSquare extends BoardSquare {
 
     super(name, 10);
 
-    inJail = new ArrayList<Player>();
+    inJail = new ArrayList<>();
     type = 6;
   }
 

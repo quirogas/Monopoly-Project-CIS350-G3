@@ -26,9 +26,8 @@ public class GameTextView {
   public String getCommand() {
     // Prompt user for command
     System.out.print(">> ");
-    String command = scanner.nextLine();
 
-    return command;
+    return scanner.nextLine();
   }
 
   /**********************************************************************
@@ -56,9 +55,8 @@ public class GameTextView {
     //TODO: Add validation to prevent anything other than desired characters entered.
     System.out.println("------------------------------------------------------");
     System.out.printf("What is Player %d's name?\n>>", num);
-    String playerName = scanner.nextLine();
 
-    return playerName;
+    return scanner.nextLine();
   }
 
   /**********************************************************************
@@ -71,9 +69,8 @@ public class GameTextView {
     //TODO: Add validation to prevent anything other than desired characters entered.
 
     System.out.printf("What is Player %d's token?\n>>", num);
-    String playerToken = scanner.nextLine();
 
-    return playerToken;
+    return scanner.nextLine();
   }
 
   /**********************************************************************
@@ -142,8 +139,8 @@ public class GameTextView {
 
   /*********************************************************************
    * This method prints the current value of booth dies.
-   * @param dieOne
-   * @param dieTwo
+   * @param dieOne the first die value
+   * @param dieTwo the second die value
    ********************************************************************/
   public void printDies(int dieOne, int dieTwo) {
     System.out.printf("die 1: %d die 2: %d\n", dieOne, dieTwo);
@@ -187,9 +184,8 @@ public class GameTextView {
   public String getPropertyToBuildOn() {
     // Prompt user for property
     System.out.print("Which property do you want to build on: ");
-    String propertyName = scanner.nextLine();
 
-    return propertyName;
+    return scanner.nextLine();
   }
 
   /**********************************************************************
